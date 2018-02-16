@@ -190,9 +190,9 @@ def jetToolbox( proc, jetType, jetSequence, outputFile,
 				jetSeq += getattr(proc, 'puppi' )
 				srcForPFJets = 'puppi'
 
-			from RecoJets.JetProducers.ak4PFJetsPuppi_cfi import ak4PFJetsPuppi
+                        from RecoJets.JetProducers.ak4PFJets_cfi     import ak4PFJets
 			setattr( proc, jetalgo+'PFJetsPuppi', 
-					ak4PFJetsPuppi.clone( src = cms.InputTag( srcForPFJets ),
+					ak4PFJets.clone( src = cms.InputTag( srcForPFJets ),
 						doAreaFastjet = True, 
 						rParam = jetSize, 
 						jetAlgorithm = algorithm ) )  
